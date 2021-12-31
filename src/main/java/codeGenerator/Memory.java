@@ -57,9 +57,9 @@ public class Memory {
 }
 
 class _3AddressCode {
-    public Operation operation;
-    public Address Operand1;
-    public Address Operand2;
+    private Operation operation;
+    private Address Operand1;
+    private Address Operand2;
     public Address Operand3;
 
     public _3AddressCode() {
@@ -89,5 +89,27 @@ class _3AddressCode {
         res.append(")");
 
         return res.toString();
+    }    public Operation getOperation() {
+        return operation;
+    }
+
+    public void setOperation(Operation operation) {
+        this.operation = operation;
+    }
+
+    public Address getOperand1() {
+        return Operand1;
+    }
+
+    public void setOperand1(Address operand1) {
+        Operand1 = operand1;
+    }
+
+    public Address getOperand2() {
+        return Operand2;
+    }
+
+    public void setOperand2(Address operand2) {
+        Operand2 = operand2;
     }
 }
