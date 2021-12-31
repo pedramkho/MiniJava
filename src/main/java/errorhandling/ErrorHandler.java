@@ -1,8 +1,6 @@
 package errorhandling;
 
-/**
- * Created by Alireza on 6/28/2015.
- */
+
 public class ErrorHandler {
     private static boolean hasError = false;
 

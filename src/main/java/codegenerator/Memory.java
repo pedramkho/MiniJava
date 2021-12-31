@@ -3,9 +3,7 @@ package codegenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by mohammad hosein on 6/27/2015.
- */
+
 public class Memory {
     private List<AddressCodeTrio> codeBlock;
     private int lastTempIndex;
@@ -89,7 +87,9 @@ class AddressCodeTrio {
         res.append(")");
 
         return res.toString();
-    }    public Operation getOperation() {
+    }
+
+    public Operation getOperation() {
         return operation;
     }
 
