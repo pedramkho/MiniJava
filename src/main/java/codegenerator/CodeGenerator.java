@@ -215,7 +215,7 @@ public class CodeGenerator {
         try {
             symbolTable.getNextParam(className, methodName);
             ErrorHandler.printError("The few argument pass for method");
-        } catch (IndexOutOfBoundsException e) {}
+        } catch (IndexOutOfBoundsException ignored) {}
             VarType t = VarType.INT;
             switch (symbolTable.getMethodReturnType(className, methodName))
             {
@@ -249,7 +249,6 @@ public class CodeGenerator {
                 ErrorHandler.printError("The argument type isn't match");
             }
             memory.addAddressCodeTrio(Operation.ASSIGN, param, new Address(s.getAddress(), t), null);
-
 
         } catch (IndexOutOfBoundsException e) {
             ErrorHandler.printError("Too many arguments pass for method");

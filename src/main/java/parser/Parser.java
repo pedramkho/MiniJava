@@ -79,9 +79,8 @@ public class Parser {
         }
         Log.print("");
 
-      } catch (Exception ignored) {
-
-        ignored.printStackTrace();
+      } catch (Exception e) {
+        e.printStackTrace();
       }
 
 
