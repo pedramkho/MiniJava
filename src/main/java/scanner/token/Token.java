@@ -40,7 +40,7 @@ public class Token {
         return result;
     }
 
-    public static Type getTyepFormString(String s) {
+    public static Type getTypeFormString(String s) {
         Pattern pattern;
         Matcher matcher;
         for (Type t : Type.values()) {

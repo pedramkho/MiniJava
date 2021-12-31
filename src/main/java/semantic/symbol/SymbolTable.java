@@ -22,8 +22,8 @@ public class SymbolTable {
         mem = memory;
         klasses = new HashMap<>();
         keyWords = new HashMap<>();
-        keyWords.put("true", new Address(1, VarType.BOOL, TypeAddress.IMIDIATE));
-        keyWords.put("false", new Address(0, VarType.BOOL, TypeAddress.IMIDIATE));
+        keyWords.put("true", new Address(1, VarType.BOOL, TypeAddress.IMMEDIATE));
+        keyWords.put("false", new Address(0, VarType.BOOL, TypeAddress.IMMEDIATE));
     }
 
     public void setLastType(SymbolType type) {
@@ -126,12 +126,12 @@ public class SymbolTable {
 
     class Klass {
         public Map<String, Symbol> Fields;
-        public Map<String, Method> Methodes;
+        public Map<String, Method> Methods;
         public Klass superClass;
 
         public Klass() {
             Fields = new HashMap<>();
-            Methodes = new HashMap<>();
+            Methods = new HashMap<>();
         }
 
         public Symbol getField(String fieldName) {
@@ -148,7 +148,7 @@ public class SymbolTable {
         public int codeAddress;
         public Map<String, Symbol> parameters;
         public Map<String, Symbol> localVariable;
-        private List<String> orderdParameters;
+        private List<String> orderedParameters;
         public int callerAddress;
         public int returnAddress;
         public SymbolType returnType;
@@ -157,7 +157,7 @@ public class SymbolTable {
         public Method(int codeAddress, SymbolType returnType) {
             this.codeAddress = codeAddress;
             this.returnType = returnType;
-            this.orderdParameters = new ArrayList<>();
+            this.orderedParameters = new ArrayList<>();
             this.returnAddress = mem.getDateAddress();
             this.callerAddress = mem.getDateAddress();
             this.parameters = new HashMap<>();
@@ -174,7 +174,7 @@ public class SymbolTable {
 
         public void addParameter(String parameterName) {
             parameters.put(parameterName, new Symbol(lastType, mem.getDateAddress()));
-            orderdParameters.add(parameterName);
+            orderedParameters.add(parameterName);
         }
 
         private void reset() {
@@ -182,22 +182,8 @@ public class SymbolTable {
         }
 
         private Symbol getNextParameter() {
-            return parameters.get(orderdParameters.get(index++));
+            return parameters.get(orderedParameters.get(index++));
         }
     }
 
 }
-
-//class Symbol{
-//    public SymbolType type;
-//    public int address;
-//    public Symbol(SymbolType type , int address)
-//    {
-//        this.type = type;
-//        this.address = address;
-//    }
-//}
-//enum SymbolType{
-//    Int,
-//    Bool
-//}
