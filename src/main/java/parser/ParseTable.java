@@ -2,6 +2,7 @@ package parser;
 
 import scanner.token.Token;
 import scanner.type.Type;
+import java.util.List;
 
 import java.util.*;
 
@@ -9,8 +10,8 @@ import java.util.*;
  * Created by mohammad hosein on 6/25/2015.
  */
 public class ParseTable {
-    private ArrayList<Map<Token,Action>> actionTable;
-    private ArrayList<Map<NonTerminal,Integer>> gotoTable;
+    private List<Map<Token,Action>> actionTable;
+    private List<Map<NonTerminal,Integer>> gotoTable;
     public ParseTable(String jsonTable) throws Exception {
         jsonTable = jsonTable.substring(2,jsonTable.length()-2);
         String[] Rows = jsonTable.split("\\],\\[");
