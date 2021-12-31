@@ -19,4 +19,5 @@ public class Symbol{
     public int getAddress() {
         return address;
     }
+
 }

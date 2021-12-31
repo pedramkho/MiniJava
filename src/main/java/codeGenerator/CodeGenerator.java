@@ -134,6 +134,12 @@ public class CodeGenerator {
         }
     }
 
+    private varType getVarType(SymbolType s) {
+        return switch (s) {
+            case Bool -> varType.Bool;
+            case Int -> varType.Int;
+        };
+    }
     private void defMain() {
         //ss.pop();
         memory.add3AddressCode(ss.pop().getNum(), Operation.JP, new Address(memory.getCurrentCodeBlockAddress(), varType.Address), null, null);
@@ -163,15 +169,7 @@ public class CodeGenerator {
             try {
 
                 Symbol s = symbolTable.get(className, methodName, next.getValue());
-                varType t = varType.Int;
-                switch (s.getType()) {
-                    case Bool:
-                        t = varType.Bool;
-                        break;
-                    case Int:
-                        t = varType.Int;
-                        break;
-                }
+                varType t = getVarType(s.getType());
                 ss.push(new Address(s.getAddress(), t));
 
 
@@ -191,15 +189,7 @@ public class CodeGenerator {
         ss.pop();
 
         Symbol s = symbolTable.get(symbolStack.pop(), symbolStack.pop());
-        varType t = varType.Int;
-        switch (s.getType()) {
-            case Bool:
-                t = varType.Bool;
-                break;
-            case Int:
-                t = varType.Int;
-                break;
-        }
+        varType t = getVarType(s.getType());
         ss.push(new Address(s.getAddress(), t));
 
     }
@@ -261,15 +251,8 @@ public class CodeGenerator {
 //        String className = symbolStack.pop();
         try {
             Symbol s = symbolTable.getNextParam(callStack.peek(), methodName);
-            varType t = varType.Int;
-            switch (s.getType()) {
-                case Bool:
-                    t = varType.Bool;
-                    break;
-                case Int:
-                    t = varType.Int;
-                    break;
-            }
+            varType t = getVarType(s.getType());
+
             Address param = ss.pop();
             if (param.getVarType() != t) {
                 ErrorHandler.printError("The argument type isn't match");
@@ -459,13 +442,7 @@ public class CodeGenerator {
         String methodName = symbolStack.pop();
         Address s = ss.pop();
         SymbolType t = symbolTable.getMethodReturnType(symbolStack.peek(), methodName);
-        varType temp = varType.Int;
-        switch (t) {
-            case Int:
-                break;
-            case Bool:
-                temp = varType.Bool;
-        }
+        varType temp = getVarType(t);
         if (s.getVarType() != temp) {
             ErrorHandler.printError("The type of method and return address was not match");
         }
