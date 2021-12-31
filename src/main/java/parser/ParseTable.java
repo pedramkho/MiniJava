@@ -2,8 +2,6 @@ package parser;
 
 import scanner.token.Token;
 
-import java.util.List;
-
 import java.util.*;
 
 /**
