@@ -32,11 +32,11 @@ public class Memory {
         return codeBlock.size() - 1;
     }
 
-    public void add3AddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
+    public void addAddressCodeTrio(Operation op, Address opr1, Address opr2, Address opr3) {
         codeBlock.add(new AddressCodeTrio(op,opr1,opr2,opr3));
     }
 
-    public void add3AddressCode(int i, Operation op, Address opr1, Address opr2, Address opr3) {
+    public void addAddressCodeTrio(int i, Operation op, Address opr1, Address opr2, Address opr3) {
         codeBlock.remove(i);
         codeBlock.add(i, new AddressCodeTrio(op, opr1, opr2,opr3));
     }

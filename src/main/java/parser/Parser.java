@@ -60,7 +60,7 @@ public class Parser {
             break;
           case REDUCE:
             Rule rule = rules.get(currentAction.number);
-            for (int i = 0; i < rule.RHS.size(); i++) {
+            for (int i = 0; i < rule.rhs.size(); i++) {
               parsStack.pop();
             }
 

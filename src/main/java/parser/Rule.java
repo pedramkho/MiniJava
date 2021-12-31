@@ -22,20 +22,20 @@ public class Rule {
         }
         String[] splited = stringRule.split("->");
             LHS = NonTerminal.valueOf(splited[0]);
-        RHS = new ArrayList<GrammarSymbol>();
+        rhs = new ArrayList<GrammarSymbol>();
         if (splited.length > 1) {
-            String[] RHSs = splited[1].split(" ");
-            for (String s : RHSs){
+            String[] rhsStrings = splited[1].split(" ");
+            for (String s : rhsStrings){
                 try {
-                    RHS.add(new GrammarSymbol(NonTerminal.valueOf(s)));
+                    rhs.add(new GrammarSymbol(NonTerminal.valueOf(s)));
                 } catch (Exception e) {
-                        RHS.add(new GrammarSymbol(new Token(Token.getTypeFormString(s), s)));
+                        rhs.add(new GrammarSymbol(new Token(Token.getTypeFormString(s), s)));
                 }
             }
         }
     }
     public NonTerminal LHS;
-    public List<GrammarSymbol> RHS;
+    public List<GrammarSymbol> rhs;
     public int semanticAction;
 }
 
