@@ -58,9 +58,9 @@ public class Memory {
 
 class AddressCodeTrio {
     private Operation operation;
-    private Address Operand1;
-    private Address Operand2;
-    public Address Operand3;
+    private Address operand1;
+    private Address operand2;
+    public Address operand3;
 
     public AddressCodeTrio() {
 
@@ -68,9 +68,9 @@ class AddressCodeTrio {
 
     public AddressCodeTrio(Operation op, Address opr1, Address opr2, Address opr3) {
         operation = op;
-        Operand1 = opr1;
-        Operand2 = opr2;
-        Operand3 = opr3;
+        operand1 = opr1;
+        operand2 = opr2;
+        operand3 = opr3;
     }
 
     public String toString()
@@ -78,14 +78,14 @@ class AddressCodeTrio {
         if(operation == null) {return "";}
         StringBuffer res = new StringBuffer("(");
         res.append(operation.toString()).append(",");
-        if(Operand1 != null) {
-            res.append(Operand1.toString());}
+        if(operand1 != null) {
+            res.append(operand1.toString());}
         res.append(",");
-        if(Operand2 != null) {
-            res.append(Operand2.toString());}
+        if(operand2 != null) {
+            res.append(operand2.toString());}
         res.append(",");
-        if(Operand3 != null) {
-            res.append(Operand3.toString());}
+        if(operand3 != null) {
+            res.append(operand3.toString());}
         res.append(")");
 
         return res.toString();
@@ -98,18 +98,18 @@ class AddressCodeTrio {
     }
 
     public Address getOperand1() {
-        return Operand1;
+        return operand1;
     }
 
     public void setOperand1(Address operand1) {
-        Operand1 = operand1;
+        this.operand1 = operand1;
     }
 
     public Address getOperand2() {
-        return Operand2;
+        return operand2;
     }
 
     public void setOperand2(Address operand2) {
-        Operand2 = operand2;
+        this.operand2 = operand2;
     }
 }
