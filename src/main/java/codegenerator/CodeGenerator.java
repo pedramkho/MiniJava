@@ -456,8 +456,4 @@ public class CodeGenerator {
         symbolTable.setLastType(SymbolType.INT);
     }
 
-    public void main() {
-
-    }
-
 }
