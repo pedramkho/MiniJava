@@ -16,11 +16,11 @@ import scanner.token.Token;
 
 
 public class Parser {
-  private List<Rule> rules;
-  private Stack<Integer> parsStack;
+  private final List<Rule> rules;
+  private final Stack<Integer> parsStack;
   private ParseTable parseTable;
   private lexicalAnalyzer lexicalAnalyzer;
-  private CodeGenerator cg;
+  private final CodeGenerator cg;
 
   public Parser() {
     parsStack = new Stack<Integer>();

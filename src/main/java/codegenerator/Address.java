@@ -7,7 +7,7 @@ public class Address {
 
     public Address(int num, VarType varType, TypeAddress type) {
         this.num = num;
-        this.type = Type;
+        this.type = type;
         this.varType = varType;
     }
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class Memory {
-    private List<AddressCodeTrio> codeBlock;
+    private final List<AddressCodeTrio> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
     private static final int startTempMemoryAddress = 500;

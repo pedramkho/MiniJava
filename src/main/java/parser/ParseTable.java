@@ -6,8 +6,8 @@ import java.util.*;
 
 
 public class ParseTable {
-    private List<Map<Token,Action>> actionTable;
-    private List<Map<NonTerminal,Integer>> gotoTable;
+    private final List<Map<Token,Action>> actionTable;
+    private final List<Map<NonTerminal,Integer>> gotoTable;
     public ParseTable(String jsonTable) throws Exception {
         jsonTable = jsonTable.substring(2,jsonTable.length()-2);
         String[] rows = jsonTable.split("\\],\\[");
