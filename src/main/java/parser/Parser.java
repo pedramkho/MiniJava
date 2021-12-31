@@ -89,7 +89,6 @@ public class Parser {
     if (!ErrorHandler.isHasError()) {
       cg.printMemory();}
 
-
   }
 
 

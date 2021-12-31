@@ -10,8 +10,7 @@ import java.util.regex.Pattern;
 public class lexicalAnalyzer {
 
     private Matcher matcher;
-
-
+    
     public lexicalAnalyzer(java.util.Scanner sc) {
         StringBuilder input = new StringBuilder();
         while (sc.hasNext()) {
