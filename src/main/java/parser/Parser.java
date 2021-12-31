@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.util.List;
 
-import Log.Log;
-import codeGenerator.CodeGenerator;
-import errorHandler.ErrorHandler;
+import log.Log;
+import codegenerator.CodeGenerator;
+import errorhandling.ErrorHandler;
 import scanner.lexicalAnalyzer;
 import scanner.token.Token;
 

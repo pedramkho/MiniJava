@@ -1,11 +1,11 @@
 package semantic.symbol;
 
 
-import codeGenerator.Address;
-import codeGenerator.Memory;
-import codeGenerator.TypeAddress;
-import codeGenerator.VarType;
-import errorHandler.ErrorHandler;
+import codegenerator.Address;
+import codegenerator.Memory;
+import codegenerator.TypeAddress;
+import codegenerator.VarType;
+import errorhandling.ErrorHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
